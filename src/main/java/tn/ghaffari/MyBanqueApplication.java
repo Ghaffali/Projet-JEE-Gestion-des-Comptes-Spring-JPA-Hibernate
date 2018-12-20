@@ -18,6 +18,7 @@ import tn.ghaffari.entities.CompteEpargne;
 import tn.ghaffari.entities.Operation;
 import tn.ghaffari.entities.Retrait;
 import tn.ghaffari.entities.Versement;
+import tn.ghaffari.metier.IBanqueMetier;
 
 @SpringBootApplication
 public class MyBanqueApplication implements CommandLineRunner {
@@ -30,6 +31,8 @@ public class MyBanqueApplication implements CommandLineRunner {
 @Autowired
 private OperationRepository operationRepository;
 
+@Autowired
+private IBanqueMetier banqueMetier;
 	public static void main(String[] args) {
 		SpringApplication.run(MyBanqueApplication.class, args);
 		
@@ -54,6 +57,9 @@ private OperationRepository operationRepository;
 		operationRepository.save(new Versement(new Date(),6561,cp2));
 		operationRepository.save(new Versement(new Date(),5452,cp2));
 		operationRepository.save(new Retrait(new Date(),9000,cp2));
+		
+		
+		banqueMetier.verser("c1", 11111111);
 	}
 
 }

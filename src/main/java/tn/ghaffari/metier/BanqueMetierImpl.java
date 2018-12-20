@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -62,7 +63,7 @@ verser(codeCpt2, montant);
 	@Override
 	public Page<Operation> listeOperation(String codeCpte, int page, int size) {
 		// TODO Auto-generated method stub
-		return null;
+		return  operationRepository.listeOperation(codeCpte, new PageRequest(page, size));
 	}
 
 }
