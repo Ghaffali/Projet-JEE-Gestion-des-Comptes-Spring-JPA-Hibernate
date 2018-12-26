@@ -42,7 +42,7 @@ private IBanqueMetier banqueMetier;
 	public void run(String... args) throws Exception {
 		
 
-		Client c1 =clientRepository.save(new Client("ALi","ghaffari@hotmail.fr"));
+	/*	Client c1 =clientRepository.save(new Client("ALi","ghaffari@hotmail.fr"));
 		Client c2= clientRepository.save(new Client("Med","ali.ghaffari@hotmail.fr"));
 		 
 		Compte cp1= compteRepository.save(new CompteCourant("c1",new Date(),9000,c1,6000 )); 
@@ -59,7 +59,7 @@ private IBanqueMetier banqueMetier;
 		operationRepository.save(new Retrait(new Date(),9000,cp2));
 		
 		
-		banqueMetier.verser("c1", 11111111);
+		banqueMetier.verser("c1", 11111111);*/
 	}
 
 }
